@@ -263,6 +263,16 @@ const PUBLICATIONS = [
 ];
 
   
+const BOOK_CHAPTERS = [
+  {
+    title: "Lessons from the Finnish Basic Income Experiment",
+    coauthors: 'with P. Moisio, O. Sirniö, and H. Hiilamo',
+    journal: "Beyond the Nordic Welfare State, Edward Elgar Publishing",
+    year: "2023", volume: "", pages: "265–280",
+    links: [["Book", "https://doi.org/10.4337/9781035375448.00024"]]
+  }
+];
+  
 const WORKING_PAPERS = [
     {
     title: "Parental Job Loss and Children's Socioeconomic Disadvantage",
@@ -296,16 +306,6 @@ const WORKING_PAPERS = [
   }
 ];
 
-
-const BOOK_CHAPTERS = [
-  {
-    title: "Lessons from the Finnish Basic Income Experiment",
-    coauthors: 'with P. Moisio, O. Sirniö, and H. Hiilamo',
-    journal: "Beyond the Nordic Welfare State, Edward Elgar Publishing",
-    year: "2023", volume: "", pages: "265–280",
-    links: [["Book", "https://doi.org/10.4337/9781035375448.00024"]]
-  }
-];
 
 const POLICY = [
   {
@@ -510,8 +510,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Papers
     renderPapers(WORK_IN_PROGRESS, 'wip-list');
   renderPublications(PUBLICATIONS, 'publications-list');
+    renderPublications(BOOK_CHAPTERS, 'book-chapters-list');
   renderPapers(WORKING_PAPERS, 'working-papers-list');
-  renderPublications(BOOK_CHAPTERS, 'book-chapters-list');
   renderPolicy(POLICY, 'policy-list');
   renderTeaching(TEACHING, VISITING_LECTURES);
 
@@ -572,11 +572,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <ul id="news-list" class="news-list"></ul>
     </section>
 
-    <section id="working-papers">
-      <h2>Working Papers</h2>
-      <div id="working-papers-list"></div>
+    <section id="wip">
+      <h2>Work in Progress</h2>
+      <div id="wip-list"></div>
     </section>
-
+    
     <section id="publications">
       <h2>Publications</h2>
       <div id="publications-list"></div>
@@ -584,9 +584,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="book-chapters-list"></div>
     </section>
 
-    <section id="wip">
-      <h2>Work in Progress</h2>
-      <div id="wip-list"></div>
+     <section id="working-papers">
+      <h2>Working Papers</h2>
+      <div id="working-papers-list"></div>
     </section>
 
     <section id="policy">
