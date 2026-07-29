@@ -134,7 +134,13 @@ const NEWS = [
   { year: "5/2026", text: `Our consortium has been awarded funding for a new research project on the economic burden of women's health conditions. Starting in 2027, I will be contributing to the health economics workstream of the project, led by <a href="https://meritamesiaislehto.com/">Merita Mesiäislehto (THL)</a>. The project will examine how gynaecological and other women-typical health conditions affect labour market outcomes, sickness absence, and work ability — combining register data with survey evidence in Finnish context. Contact me if you are interested in cross-country register data collaboration on this topic!` },
  ];
 
-const WORK_IN_PROGRESS = [
+const WORKS_IN_PROGRESS = [
+   {
+    title: "Parental Job Loss and Children's Socioeconomic Disadvantage",
+    coauthors: 'with <a href="https://www.utu.fi/fi/ihmiset/niko-eskelinen">Niko Eskelinen</a> and <a href="https://www.utu.fi/en/research/invest">Laura Jernström</a>',
+    badge: "INVEST Working Papers 136/2024 · <em>submitted</em>",
+    links: [["Working paper", "https://osf.io/preprints/socarxiv/bs3fd_v1"]]
+  },
   {
     title: "Health \"Shocks\"",
     coauthors: 'with <a href="https://sites.google.com/site/mhalla1980/">Martin Halla</a> and <a href="https://ossitahvonen.github.io/">Ossi Tahvonen</a>',
@@ -190,6 +196,26 @@ const WORK_IN_PROGRESS = [
     links: []
   }
 ];
+
+ const RESTING_PAPERS = [
+   {
+    title: "Mental Disorders and Earnings in the Short and the Very Long Term",
+    coauthors: "",
+    badge: "INVEST Working Papers 107/2024",
+    links: [
+    ["Working paper", "https://osf.io/preprints/socarxiv/tcer4_v1"],
+    ["Older version 1", "https://ace-economics.fi/kuvat/dp145.pdf"],
+    ["Older version 2", "https://ace-economics.fi/kuvat/dp148.pdf"]
+    ]
+    },
+  {
+    title: "The Long-Term Effects of Alcohol Availability on Mortality: Evidence from an Alcohol Reform",
+    coauthors: "",
+    badge: "Aboa Centre for Economics Discussion Paper No. 115",
+    links: [["Working paper", "https://ace-economics.fi/kuvat/dp115.pdf"]]
+  }
+];
+ 
 
 const PUBLICATIONS = [
    {
@@ -279,34 +305,8 @@ const BOOK_CHAPTERS = [
     links: [["Book", "https://doi.org/10.4337/9781035375448.00024"]]
   }
 ];
-  
-const WORKING_PAPERS = [
-    {
-    title: "Parental Job Loss and Children's Socioeconomic Disadvantage",
-    coauthors: 'with <a href="https://www.utu.fi/fi/ihmiset/niko-eskelinen">Niko Eskelinen</a> and <a href="https://www.utu.fi/en/research/invest">Laura Jernström</a>',
-    badge: "INVEST Working Papers 136/2024 · <em>submitted</em>",
-    links: [["Working paper", "https://osf.io/preprints/socarxiv/bs3fd_v1"]]
-  },
-  {
-    title: "Mental Disorders and Earnings in the Short and the Very Long Term",
-    coauthors: "",
-    badge: "INVEST Working Papers 107/2024",
-    links: [
-    ["Working paper", "https://osf.io/preprints/socarxiv/tcer4_v1"],
-    ["Older version 1", "https://ace-economics.fi/kuvat/dp145.pdf"],
-    ["Older version 2", "https://ace-economics.fi/kuvat/dp148.pdf"]
-    ]
-    },
-  {
-    title: "The Long-Term Effects of Alcohol Availability on Mortality: Evidence from an Alcohol Reform",
-    coauthors: "",
-    badge: "Aboa Centre for Economics Discussion Paper No. 115",
-    links: [["Working paper", "https://ace-economics.fi/kuvat/dp115.pdf"]]
-  }
-];
 
-
-const FINNISH_PUBLICATIONS = [
+  const PUBLICATIONS_IN_FINNISH = [
   {
     title: "Piilo-Markov-mallit elämänkulkututkimuksen sekvenssiaineistojen analyysissa",
     meta: 'with <a href="https://jounihelske.netlify.app/">Jouni Helske</a>, <a href="https://www.utu.fi/fi/ihmiset/satu-helske">Satu Helske</a> · <em>accepted for publication in Sosiaalilääketieteen aikakauslehti</em> 2026',
@@ -351,6 +351,10 @@ const FINNISH_PUBLICATIONS = [
     lang: "fi"
   }
 ];
+
+ 
+
+ 
 
 const TEACHING = [
   {
@@ -507,10 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Papers
-    renderPapers(WORK_IN_PROGRESS, 'wip-list');
+    renderPapers(WORKS_IN_PROGRESS, 'wip-list');
   renderPublications(PUBLICATIONS, 'publications-list');
   renderPublications(BOOK_CHAPTERS, 'book-chapters-list');
-  renderPapers(WORKING_PAPERS, 'working-papers-list');
   renderFinnish(FINNISH_PUBLICATIONS, 'finnish-list');
   renderTeaching(TEACHING, VISITING_LECTURES);
 
@@ -539,10 +542,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="header-inner">
     <nav>
        <a href="#top">About</a>
-      <a href="#wip">In Progress</a>
+      <a href="#wip">Works in Progress</a>
       <a href="#publications">Publications</a>
-      <a href="#working-papers">Working Papers</a>
-      <a href="#finnish">Finnish Publications</a>
       <a href="#teaching">Teaching</a>
       <a href="CV_Salokangas.pdf" class="nav-cv">CV</a>
     </nav>
@@ -573,8 +574,10 @@ document.addEventListener('DOMContentLoaded', () => {
     </section>
 
     <section id="wip">
-      <h2>Work in Progress</h2>
+      <h2>Works in Progress</h2>
       <div id="wip-list"></div>
+      <div class="section-subheading">Resting Papers</div>
+      <div id="resting-chapters-list"></div>
     </section>
     
     <section id="publications">
@@ -582,17 +585,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="publications-list"></div>
       <div class="section-subheading">Book Chapters</div>
       <div id="book-chapters-list"></div>
+      <div class="section-subheading">Publications in Finnish</div>
+      <div id="publications-finnish-list"></div>
     </section>
 
-     <section id="working-papers">
-      <h2>Working Papers</h2>
-      <div id="working-papers-list"></div>
-    </section>
-
-    <section id="finnish">
-      <h2>Finnish publications</h2>
-      <div id="finnish-list"></div>
-    </section>
 
     <section id="teaching">
       <h2>Teaching</h2>
