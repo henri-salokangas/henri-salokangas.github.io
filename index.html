@@ -435,21 +435,7 @@ function renderPublications(list, containerId) {
   }).join('');
 }
 
-function renderFinnish(list, containerId) {
-  const el = document.getElementById(containerId);
-  el.innerHTML = list.map(p => {
-    const titleHtml = p.link
-      ? `<a href="${p.link}" class="paper-title-link">${p.title}</a>`
-      : p.title;
-    const langNote = p.lang === 'fi' ? ' <span class="lang-note">in Finnish</span>' : '';
-    return `
-      <div class="finnish-item">
-        <div class="finnish-title">${titleHtml}</div>
-        <div class="finnish-meta">${p.meta}${langNote}</div>
-      </div>
-    `;
-  }).join('');
-}
+
 
 function renderTeaching(list, visitingList) {
   const el = document.getElementById('teaching-list');
@@ -578,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h2>Work in Progress</h2>
       <div id="wip-list"></div>
       <div class="section-subheading">Resting Papers</div>
-      <div id="resting-chapters-list"></div>
+      <div id="resting-papers-list"></div>
     </section>
     
     <section id="publications">
