@@ -330,7 +330,7 @@ const BOOK_CHAPTERS = [
   },
   {
     title: "Kvasikokeelliset menetelmät terveydenhuollon ja terveystaloustieteen vaikutusarvioinneissa",
-    coauthors: 'with <<a href="https://www.utu.fi/en/people/mika-kortelainen">Mika Kortelainen</a>',
+    coauthors: 'with <a href="https://www.utu.fi/en/people/mika-kortelainen">Mika Kortelainen</a>',
     journal: "Sosiaalilääketieteen aikakauslehti",
     year: "2023", volume: "60(3)", pages: "305-320",
     links: [["Journal", "https://doi.org/10.23990/sa.122529"]],
@@ -431,7 +431,7 @@ function renderPublications(list, containerId) {
       <div class="paper">
         <div class="paper-title">${titleHtml}</div>
         <div class="paper-meta">
-          ${p.coauthors}<br>
+          ${p.coauthors ? p.coauthors + '<br>' : ''}
           <span class="journal">${p.journal}</span>, ${p.year}${p.volume ? ', ' + p.volume : ''}${p.pages ? ', pp. ' + p.pages : ''}
         </div>
         ${linksHtml}
