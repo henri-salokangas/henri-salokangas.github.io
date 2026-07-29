@@ -511,10 +511,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Papers
-    renderPapers(WORKS_IN_PROGRESS, 'wip-list');
+  renderPapers(WORKS_IN_PROGRESS, 'wip-list');
+  renderPapers(RESTING_PAPERS, 'resting-papers-list');
   renderPublications(PUBLICATIONS, 'publications-list');
   renderPublications(BOOK_CHAPTERS, 'book-chapters-list');
-  renderFinnish(FINNISH_PUBLICATIONS, 'finnish-list');
+  renderPublications(PUBLICATIONS_IN_FINNISH, 'publications-finnish-list');
   renderTeaching(TEACHING, VISITING_LECTURES);
 
   // Header shadow on scroll
